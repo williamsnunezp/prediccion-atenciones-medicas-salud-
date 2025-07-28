@@ -1,6 +1,6 @@
 # 🏥 Predicción de Atenciones Médicas en el Hospital María Auxiliadora
 
-Este proyecto aplica técnicas de **Machine Learning supervisado** para predecir la **asistencia de pacientes** a sus citas médicas en el Hospital de Apoyo María Auxiliadora (Lima, Perú). Se sigue la metodología **CRISP-DM**, implementando principalmente las fases **2 a 5**:  
+Este proyecto aplica técnicas de **Machine Learning supervisado** para predecir la **asistencia de pacientes** a sus citas médicas en el Hospital de Apoyo María Auxiliadora (Lima, Perú). Se sigue la metodología **CRISP-DM**, implementando en codigo python principalmente las fases **2 a 5**:  
 **Comprensión de los datos, Preparación, Modelado y Evaluación.**
 
 🔗 **Fuente de datos oficial**: [Portal de Datos Abiertos del Gobierno del Perú](https://datosabiertos.gob.pe/group/hospital-mar%C3%ADa-auxiliadora?sort_by=changed&f%5B0%5D=changed%3A2024-05-02)
@@ -50,7 +50,7 @@ Se probaron cuatro algoritmos principales:
 - `Modalidad de cita` (presencial o remoto)
 - `Especialidad médica`
 - `Diferencia de días entre solicitud y cita`
-- `Estación`, `bimestre`, `semana del mes` (derivadas de fecha)
+- `semestre_cita`,`Cita_mes_diferente` y `semana_mes_cita` (derivadas de fecha)
 
 ---
 

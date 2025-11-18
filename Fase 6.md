@@ -1,24 +1,8 @@
 # **Fase 6: Implementación**
 
-Como resultado del análisis exhaustivo y evaluación comparativa de múltiples estrategias de modelado y ensamblaje, se propone implementar el **Global Ensemble (Votación Mayoritaria)** en el sistema de gestión del Hospital de Apoyo María Auxiliadora.
+Como resultado del análisis exhaustivo y evaluación comparativa de múltiples estrategias de modelado y ensamblaje, se propone implementar el **Global Ensemble** en el sistema de gestión del Hospital de Apoyo María Auxiliadora.
 
-## 6.1. Modelo seleccionado para producción
-
-**Arquitectura del modelo final:**
-- **Nombre**: Global Ensemble
-- **Composición**: Combinación ponderada (50-50) de dos ensamblajes:
-  - LGBM Ensemble: Promedio de 3 modelos LightGBM entrenados con semillas 42, 123, 456
-  - XGB Ensemble: Promedio de 3 modelos XGBoost entrenados con semillas 42, 123, 456
-- **Total de modelos base**: 6 (3 LightGBM + 3 XGBoost)
-
-**Rendimiento del modelo:**
-- F1 Score (ponderado): 0.8173
-- Accuracy: 0.8193
-- ROC AUC: 0.8864
-- Recall clase positiva (asistencia): 92.32%
-- Precision clase positiva: 76.43%
-
-## 6.2. Objetivo de la implementación
+## 6.1. Objetivo de la implementación
 
 El modelo tiene como finalidad anticipar la probabilidad de asistencia de los pacientes a sus citas médicas programadas con alta precisión y robustez. Esto permitirá:
 
@@ -28,9 +12,9 @@ El modelo tiene como finalidad anticipar la probabilidad de asistencia de los pa
 - **Aumentar eficiencia operativa**: Reducir tiempos de espera y maximizar utilización de slots disponibles
 - **Minimizar costos**: Disminuir recursos desperdiciados por citas no utilizadas
 
-## 6.3. Propuesta de integración
+## 6.2. Propuesta de integración
 
-### 6.3.1. Arquitectura de despliegue
+### 6.2.1. Arquitectura de despliegue
 
 **Componente 1: Servidor de modelos**
 - Entorno: Servidor local del hospital o servicio cloud (AWS SageMaker, Google Cloud AI Platform, Azure ML)
@@ -53,7 +37,7 @@ El modelo tiene como finalidad anticipar la probabilidad de asistencia de los pa
 - Resultados reales (outcome) para monitoreo continuo
 - Métricas de rendimiento calculadas periódicamente
 
-### 6.3.2. Modos de operación
+### 6.2.2. Modos de operación
 
 **Modo batch (por lotes):**
 - Procesamiento diario/semanal de todas las citas programadas
@@ -65,7 +49,7 @@ El modelo tiene como finalidad anticipar la probabilidad de asistencia de los pa
 - Integración directa con sistema de gestión hospitalaria (HIS/EHR)
 - Feedback inmediato al personal administrativo
 
-### 6.3.3. Interfaz de usuario
+### 6.2.3. Interfaz de usuario
 
 **Opción 1: Dashboard web administrativo**
 - Panel de control visual mostrando:
@@ -85,7 +69,7 @@ El modelo tiene como finalidad anticipar la probabilidad de asistencia de los pa
 - Notificaciones push para citas de alto riesgo
 - Acceso rápido desde cualquier ubicación del hospital
 
-### 6.3.4. Automatización de intervenciones
+### 6.2.4. Automatización de intervenciones
 
 **Sistema de alertas inteligentes:**
 1. **Alto riesgo (probabilidad < 50%)**:
@@ -105,9 +89,9 @@ El modelo tiene como finalidad anticipar la probabilidad de asistencia de los pa
 - Redistribución automática de pacientes en lista de espera
 - Alertas al personal para ajustes manuales cuando sea necesario
 
-## 6.4. Plan de monitoreo continuo
+## 6.3. Plan de monitoreo continuo
 
-### 6.4.1. Métricas de seguimiento
+### 6.3.1. Métricas de seguimiento
 
 **Métricas de rendimiento (evaluación mensual):**
 - Accuracy en producción
@@ -128,7 +112,7 @@ El modelo tiene como finalidad anticipar la probabilidad de asistencia de los pa
 - Satisfacción del personal administrativo
 - Mejora en utilización de slots de citas
 
-### 6.4.2. Detección de data drift
+### 6.3.2. Detección de data drift
 
 **Monitoreo de características de entrada:**
 - Distribución de variables numéricas (edad, días de anticipación, etc.)
@@ -140,7 +124,7 @@ El modelo tiene como finalidad anticipar la probabilidad de asistencia de los pa
 - Aparecen nuevas categorías no vistas en entrenamiento
 - Rendimiento del modelo cae > 5% respecto a baseline
 
-### 6.4.3. Plan de reentrenamiento
+### 6.3.3. Plan de reentrenamiento
 
 **Frecuencia sugerida:**
 - **Reentrenamiento completo**: Cada 6 meses
@@ -156,9 +140,9 @@ El modelo tiene como finalidad anticipar la probabilidad de asistencia de los pa
 6. A/B testing: modelo nuevo vs modelo actual (2 semanas)
 7. Despliegue gradual si el nuevo modelo supera al actual
 
-## 6.5. Capacitación y adopción
+## 6.4. Capacitación y adopción
 
-### 6.5.1. Plan de capacitación por rol
+### 6.4.1. Plan de capacitación por rol
 
 **Personal administrativo (recepcionistas, secretarias):**
 - Duración: 2 horas
@@ -184,16 +168,16 @@ El modelo tiene como finalidad anticipar la probabilidad de asistencia de los pa
   - Troubleshooting común
   - Proceso de actualización/reentrenamiento
 
-### 6.5.2. Materiales de soporte
+### 6.4.2. Materiales de soporte
 
 - Manual de usuario con capturas de pantalla
 - Video tutoriales cortos (< 5 min cada uno)
 - FAQ sobre interpretación de predicciones
 - Contacto de soporte técnico para consultas
 
-## 6.6. Consideraciones éticas y legales
+## 6.5. Consideraciones éticas y legales
 
-### 6.6.1. Protección de datos
+### 6.5.1. Protección de datos
 
 **Cumplimiento normativo:**
 - Ley N° 29733 - Ley de Protección de Datos Personales (Perú)
@@ -207,7 +191,7 @@ El modelo tiene como finalidad anticipar la probabilidad de asistencia de los pa
 - Anonimización de datos para análisis agregados
 - Backup automático y plan de recuperación ante desastres
 
-### 6.6.2. Uso ético del modelo
+### 6.5.2. Uso ético del modelo
 
 **Principios:**
 - **Transparencia**: El personal debe saber que se utiliza IA para predicciones
@@ -220,13 +204,13 @@ El modelo tiene como finalidad anticipar la probabilidad de asistencia de los pa
 - NO deben influir en priorización clínica de emergencias
 - NO sustituyen la comunicación directa con el paciente
 
-### 6.6.3. Consentimiento informado
+### 6.5.3. Consentimiento informado
 
 - Política de privacidad clara sobre uso de datos para predicciones
 - Opción de opt-out para pacientes que no deseen ser incluidos
 - Información en cartelería y sitio web del hospital
 
-## 6.7. Roadmap de implementación
+## 6.6. Roadmap de implementación
 
 **Fase 1: Preparación (Mes 1)**
 - ✅ Selección y validación del modelo final
@@ -271,7 +255,7 @@ El modelo tiene como finalidad anticipar la probabilidad de asistencia de los pa
 - Accuracy en producción: mantener > 80%
 - Recall clase positiva: mantener > 90%
 
-## 6.9. Consideraciones finales
+## 6.8. Consideraciones finales
 
 La implementación del **Global Ensemble** representa un avance significativo hacia una gestión hospitalaria predictiva, data-driven y centrada en la eficiencia operativa. La combinación de múltiples modelos robustos (3 LightGBM + 3 XGBoost) garantiza:
 

@@ -1,7 +1,7 @@
 # 🏥 Predicción de Asistencia a Citas Médicas – Hospital María Auxiliadora
 
 Este proyecto implementa un sistema de **Machine Learning supervisado** para predecir si un paciente asistirá o no a su cita médica en el Hospital de Apoyo María Auxiliadora (Lima, Perú).  
-Se sigue la metodología **CRISP-DM** e incluye las fases **1 a 5**, desarrolladas íntegramente en Python.
+Se sigue la metodología **CRISP-DM** e incluye las fases **2 a 5**, desarrolladas íntegramente en Python.
 
 🔗 **Fuente de datos:**  
 Portal de Datos Abiertos del Gobierno del Perú  

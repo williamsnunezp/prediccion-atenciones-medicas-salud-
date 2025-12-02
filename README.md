@@ -1,7 +1,7 @@
 # 🏥 Predicción de Asistencia a Citas Médicas – Hospital María Auxiliadora
 
 Este proyecto implementa un sistema de **Machine Learning supervisado** para predecir si un paciente asistirá o no a su cita médica con los datos del Hospital de Apoyo María Auxiliadora (Lima, Perú).  
-Se sigue la metodología **CRISP-DM** (Cross-Industry Standard Process for Data Mining) es un proceso estándar intersectorial para la minería de datos. Se trata de un modelo que describe las etapas comunes de un proyecto de minería de datos y ciencia de datos.
+Se sigue la metodología **CRISP-DM** (Cross-Industry Standard Process for Data Mining) es un proceso estándar intersectorial para la minería de datos. Se trata de una metodología que describe las etapas comunes de un proyecto de minería de datos y ciencia de datos.
 
 🔗 **Fuente de datos:**  
 Portal de Datos Abiertos del Gobierno del Perú  

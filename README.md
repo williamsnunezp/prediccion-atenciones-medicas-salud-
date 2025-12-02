@@ -14,8 +14,7 @@ https://www.datosabiertos.gob.pe/dataset/citas-medicas-en-el-hospital-de-apoyo-m
 Desarrollar un modelo que prediga la asistencia de pacientes a sus citas médicas utilizando información:
 
 - Administrativa  
-- Demográfica  
-- Geográfica  
+- Demográfica    
 - Temporal  
 - De comportamiento (patrones históricos)
 
